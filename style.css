@@ -1,0 +1,412 @@
+html, body {
+    height: 100%; /* لازم تحدد ارتفاع الجسم بالكامل */
+    margin: 0; /* إزالة الهوامش الافتراضية */
+    padding: 0; /* إزالة الحشو الافتراضي */
+    background-color: #f1e2b8; /* اللون الأساسي للخلفية */
+    background-image: url('https://e1.pxfuel.com/desktop-wallpaper/411/263/desktop-wallpaper-best-5-old-faded-map-backgrounds-on-hip-old-treasure-map.jpg'); /* إضافة صورة الخلفية للخريطة العتيقة */
+    background-repeat: repeat; /* تكرار الصورة في حال كانت صغيرة */
+    background-size: cover; /* تغطية كامل الصفحة بالصورة */
+    font-family: 'Arial', sans-serif; /* الخط الأساسي */
+    color: #3e2a47; /* لون النص */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* تأثير شبه شفاف للمحتوى */
+    padding: 20px;
+    border-radius: 10px; /* حواف دائرية إذا كنت محتاج شكل أكثر نعومة */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* إضافة ظل ناعم حول العناصر */
+} 
+
+/* الرأس */
+header {
+    background-color: #8b4513;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+/* قسم "عن المسابقة" */
+#about {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+#about img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+/* جدول الترتيب */
+#leaderboard {
+    padding: 20px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* العد التنازلي */
+#countdown {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* القدم */
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;  /* للتأكد من محاذاة الصورة والنص في المنتصف */
+  justify-content: space-between;
+}
+
+.header-img {
+  width: 400px;  /* تغيير الحجم حسب رغبتك */
+  height: auto;
+}
+
+.header-text {
+  text-align: right;  /* محاذاة النص إلى اليمين */
+}
+
+.header h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.header p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+/* الخط فوق المستطيل */
+.header-container {
+    border-top: 3px solid #333; /* خط علوي */
+    padding-top: 20px; /* المسافة بين الخط والمحتوى */
+    margin-bottom: 20px; /* المسافة بين هذا الجزء وما تحته */
+    text-align: center; /* محاذاة النص في الوسط */
+}
+
+/* تنسيق الروابط داخل المستطيل */
+.section-link {
+    display: inline-block; /* جعلهم جنب بعض */
+    margin-right: 15px; /* المسافة بين كل رابط */
+}
+
+.section-link a {
+    background-color: #f0f0f0; /* لون الخلفية */
+    padding: 10px 20px; /* المسافات داخل الرابط */
+    border-radius: 5px; /* حواف دائرية */
+    color: #333; /* لون النص */
+    text-decoration: none; /* إزالة خط تحت الرابط */
+    font-weight: bold; /* جعل النص عريض */
+    font-size: 16px; /* حجم الخط */
+}
+
+.section-link a:hover {
+    background-color: #e0e0e0; /* تغيير اللون عند التمرير */
+    color: #007BFF; /* تغيير اللون عند التمرير */
+}
+body {
+  background: url('https://example.com/ramadan-background.gif'); /* ضع رابط خلفية متحركة هنا */
+  background-size: cover;
+  background-position: center;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+#countdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.time-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  margin: 0 20px;
+}
+
+.time-box span {
+  font-size: 60px;
+  font-weight: bold;
+  color: #f4b400;
+  animation: pulse 1s infinite alternate;
+}
+
+.time-box p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  margin-top: 10px;
+}
+
+/* تأثير نبض للأرقام */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* تأثير الظل المتحرك حول العد التنازلي */
+#countdown {
+  animation: shadowAnimation 2s infinite alternate;
+}
+
+@keyframes shadowAnimation {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(255, 204, 0, 1);
+  }
+}
+3. JavaScript (لحساب الوقت المتبقي):
+javascript
+Copy
+Edit
+// Set the date we're counting down to
+const countDownDate = new Date("Feb 28, 2025 00:00:00").getTime();
+
+// Update the countdown every 1 second
+const x = setInterval(function() {
+
+  const now = new Date().getTime();
+  const distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes, and seconds
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the elements
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+
+  // If the countdown is over, display some message
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "EXPIRED";
+  }
+}, 1000);  
+.section {
+    display: flex; /* استخدام flexbox لتوزيع المحتوى */
+    align-items: center; /* محاذاة العمود عموديًا */
+    margin-bottom: 30px; /* المسافة بين الأقسام */
+    border: 1px solid #ddd; /* إضافة حدود بسيطة حول القسم */
+    padding: 20px; /* المسافة داخل القسم */
+    background-color: #fafafa; /* خلفية خفيفة */
+    border-radius: 8px; /* حواف دائرية بسيطة */
+}
+
+/* تنسيق الصورة */
+.image-container {
+    width: 40%; /* عرض الصورة 40% من العرض الكلي */
+    margin-right: 20px; /* المسافة بين الصورة والنص */
+}
+
+.image-container img {
+    width: 100%; /* الصورة تاخد كامل العرض المحدد */
+    height: auto; /* المحافظة على الأبعاد الأصلية للصورة */
+    border-radius: 8px; /* حواف دائرية للصورة */
+}
+
+/* تنسيق النص */
+.text-container {
+    width: 60%; /* عرض النص 60% من العرض الكلي */
+}
+
+.text-container a {
+    font-size: 20px; /* حجم الخط للرابط */
+    color: #007BFF; /* لون الرابط */
+    text-decoration: none; /* إزالة خط تحت الرابط */
+    font-weight: bold; /* جعل الرابط عريض */
+    text-align: left;  /* محاذاة النص إلى اليمين */
+}
+
+.text-container a:hover {
+    color: #0056b3; /* تغيير لون الرابط عند التمرير */
+}
+
+.text-container p {
+    margin-top: 10px; /* المسافة بين الرابط والوصف */
+    font-size: 16px; /* حجم الخط للوصف */
+    color: #333; /* لون النص */
+}
+.section {
+    display: flex;            /* تفعيل flexbox */
+    align-items: left;      /* محاذاة العناصر عموديًا */
+    justify-content: flex-start; /* جعل العناصر تبدأ من الشمال */
+    margin: 20px 0;           /* إضافة مسافة بين الأقسام */
+}
+
+.image-container {
+    width: 30%;               /* تحديد عرض الصورة */
+    margin-right: 20px;       /* المسافة بين الصورة والنص */
+}
+
+.text-container {
+    width: 70%;               /* تحديد عرض النص */
+    text-align: right;  /* محاذاة النص إلى اليمين */
+}
+
+.text-container a {
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;    /* إزالة خط التسطير */
+    text-align: right;  /* محاذاة النص إلى اليمين */
+}
+
+.text-container p {
+    font-size: 16px;
+    color: #555;
+    text-align: right;  /* محاذاة النص إلى اليمين */
+}
+/* تحويل الهلال الي قمر  */
+.moon-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(to top, #002f4b, #1a3d61); /* خلفية متدرجة لسماء الليل */
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.moon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url('https://w1.pngwing.com/pngs/663/997/png-transparent-crescent-moon-new-moon-lunar-phase-full-moon-circle-body-jewelry.png'); /* صورة الهلال */
+    background-size: cover;
+    background-position: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s ease;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+.moon-container:hover .moon {
+    width: 150px;
+    height: 150px;
+    background-image: url(''); /* صورة القمر الكامل */
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.8); /* تأثير الإضاءة حول القمر */
+}
+
+.welcome-message {
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    transition: opacity 0.5s ease;
+}
+
+.moon-container:hover .welcome-message {
+    opacity: 1;
+}
+
+.moon-container:hover .welcome-message:after {
+    content: "أهلاً وسهلاً بك في مسابقة رمضان!";
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 10px;
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+}
+.message {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  z-index: 1000;
+    height: 500pex;
+    font-size: 24px; /* حجم النص أكبر */
+      text-align: center; /* توسيط النص */ 
+    direction: rtl; 
+}
+/* شاشات موبايل صغيرة */
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+  } 
+    /* شاشات تابلت */
+    @media only screen and (min-width: 601px) and (max-width: 1024px) {
+      .container {
+        padding: 15px;
+      } 
+        /* شاشات اللابتوب أو أكبر */
+        @media only screen and (min-width: 1025px) {
+          .container {
+            width: 80%;
+          }
+
+.close-btn {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+} 
+

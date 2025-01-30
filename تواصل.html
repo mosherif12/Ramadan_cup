@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://e1.pxfuel.com/desktop-wallpaper/411/263/desktop-wallpaper-best-5-old-faded-map-backgrounds-on-hip-old-treasure-map.jpg'); /* إضافة صورة الخلفية للخريطة العتيقة */
+              direction: rtl; /* إضافة هذه الخاصية لتغيير الاتجاه */ 
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #f39c12;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: #27ae60;
+            font-size: 20px;
+            display: inline-block;
+            margin: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #2ecc71;
+        }
+
+        .comments {
+            margin-top: 40px;
+        }
+
+        .comment-box {
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .comment-box:focus {
+            border-color: #27ae60;
+            outline: none;
+        }
+
+        button {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 25px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2ecc71;
+        }
+
+        .comment-section {
+            margin-top: 40px;
+        }
+
+        .comment {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #27ae60;
+            transition: all 0.3s ease;
+        }
+
+        .comment .name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .comment .message {
+            color: #555;
+        }
+
+        .comment:hover {
+            background-color: #f2f2f2;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>تواصل معنا</h1>
+
+        <!-- معلومات الاتصال -->
+        <div class="contact-info">
+            <p>يمكنك التواصل معنا عبر الروابط التالية:</p>
+            <a href="mailto:email@example.com" target="_blank">البريد الإلكتروني</a>
+            <a href="https://wa.me/1234567890" target="_blank">واتساب</a>
+        </div>
+
+        <!-- التعليقات -->
+        <div class="comments">
+            <h2>اترك تعليقك:</h2>
+            <textarea id="comment" class="comment-box" placeholder="اكتب تعليقك هنا..."></textarea>
+            <button id="submitComment">إرسال تعليق</button>
+        </div>
+
+        <!-- قسم التعليقات المعروضة -->
+        <div class="comment-section" id="commentSection">
+            <!-- التعليقات ستظهر هنا -->
+        </div>
+    </div>
+    <hr> 
+
+    <script>
+        // التعامل مع إضافة تعليق
+        document.getElementById("submitComment").addEventListener("click", function() {
+            let commentText = document.getElementById("comment").value;
+
+            if (commentText) {
+                // إضافة التعليق إلى القسم المعروض
+                let commentSection = document.getElementById("commentSection");
+                let newComment = document.createElement("div");
+                newComment.classList.add("comment");
+
+                newComment.innerHTML = `
+                    <div class="name">مستخدم جديد:</div>
+                    <div class="message">${commentText}</div>
+                `;
+
+                commentSection.appendChild(newComment);
+
+                // مسح حقل التعليق بعد الإرسال
+                document.getElementById("comment").value = "";
+            } else {
+                alert("من فضلك، اكتب تعليقك أولاً.");
+            }
+        });
+    </script>
+
+</body>
+</html> 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدخال الكود</title>
+    <style>
+        /* تنسيق بسيط */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+             background-image: url('https://e1.pxfuel.com/desktop-wallpaper/411/263/desktop-wallpaper-best-5-old-faded-map-backgrounds-on-hip-old-treasure-map.jpg'); /* إضافة صورة الخلفية للخريطة العتيقة */
+        }
+
+        .container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>أدخل الكود للوصول إلى الترتيب</h1>
+    <div class="container">
+        <label for="code">أدخل كود الترتيب:</label><br>
+        <input type="text" id="code" placeholder="أدخل الكود هنا"><br>
+        <button onclick="validateCode()">تأكيد</button>
+        <p id="errorMessage" class="error"></p>
+    </div>
+     <script src="script.js"></script> 
+</body>
+</html>

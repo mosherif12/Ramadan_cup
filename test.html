@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مهام اليوم</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            text-align: center;
+            background-image: url('https://e1.pxfuel.com/desktop-wallpaper/411/263/desktop-wallpaper-best-5-old-faded-map-backgrounds-on-hip-old-treasure-map.jpg');
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f39c12;
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #27ae60;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button.completed {
+            background-color: #95a5a6;
+        }
+        label:hover {
+            color: #4CAF50; /* تغيير اللون عند التمرير */
+        } 
+        .message {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            display: none;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tasks">
+        <!-- رسالة النقاط -->
+        <div id="message" class="message"></div>
+
+    <h1>مهام اليوم</h1>
+    <ul id="taskList"></ul>
+    <div>
+        <button id="totalPoints">النقاط الكلية: 0</button>
+    </div> 
+    <script>
+        const tasks = [
+            { name: "صلاة الفجر", points: 1 },
+            { name: "صلاة الظهر", points: 1 },
+            { name: "صلاة العصر", points: 1 },
+            { name: "صلاة المغرب", points: 1 },
+            { name: "صلاة العشاء", points: 1 },
+            { name: "صلاة الشروق", points: 2 },
+            { name: "صلاة التراويح", points: 2 },
+            { name: "قراءة جزء معين من القرآن", points: 2 },
+            { name: "قيام الليل", points: 3 },
+            { name: "مساعدة أو صدقة أو تبرع", points: 2 },
+            { name: "سبحان الله وبحمده 100 مرة", points: 2 },
+            { name: "حفظ أي سورة من القرآن", points: 1 },
+            { name: "صلاة السنن (3 صلوات على الأقل)", points: 2 },
+            { name: "تسبيح أعلى من 600 مرة", points: 2 }
+        ];
+
+        function loadTasks() {
+            let storedTasks = JSON.parse(localStorage.getItem("completedTasks")) || {};
+            document.getElementById("taskList").innerHTML = tasks.map((task, index) => {
+                let completed = storedTasks[index] ? "completed" : "";
+                return `<li>
+                    ${task.name} - ${task.points} نقاط
+                    <button class="${completed}" onclick="completeTask(${index})">✔</button>
+                </li>`;
+            }).join('');
+        }
+
+        function completeTask(index) {
+            let storedTasks = JSON.parse(localStorage.getItem("completedTasks")) || {};
+            storedTasks[index] = !storedTasks[index];
+            localStorage.setItem("completedTasks", JSON.stringify(storedTasks));
+            loadTasks();
+        }
+
+        loadTasks();
+
+        // استرجاع النقاط الكلية من localStorage أو تعيينها إلى 0 في البداية
+        function getTotalPoints() {
+            const points = localStorage.getItem('totalPoints');
+            return points ? parseInt(points) : 0;
+        }
+
+        // حفظ النقاط الكلية في localStorage
+        function saveTotalPoints(points) {
+            localStorage.setItem('totalPoints', points);
+            document.getElementById('totalPoints').innerText = `النقاط الكلية: ${points}`;
+        }
+
+        // تحديث النقاط بناءً على اختيار أو إزالة اختيار المهام
+        function updatePoints(points, taskId) {
+            let totalPoints = getTotalPoints();
+
+            const taskCheckbox = document.getElementById(taskId);
+            if (taskCheckbox.checked) {
+                totalPoints += points; // إضافة النقاط إذا تم اختيار المهمة
+            } else {
+                totalPoints -= points; // إزالة النقاط إذا تم إلغاء اختيار المهمة
+            }
+
+            saveTotalPoints(totalPoints); // حفظ النقاط الجديدة
+        }
+
+        // عند تحميل الصفحة، عرض النقاط الكلية المحفوظة
+        document.addEventListener('DOMContentLoaded', function() {
+            saveTotalPoints(getTotalPoints());
+        }); 
+        // عرض رسالة المؤشر للنقاط المكتسبة
+        function showMessage(points) {
+            const messageElement = document.getElementById('message');
+            messageElement.innerText = `لقد حصلت على ${points} نقطة!`;
+            messageElement.style.display = 'block';  // عرض الرسالة
+            setTimeout(function() {
+                messageElement.style.display = 'none';  // إخفاء الرسالة بعد 3 ثواني
+            }, 3000);
+        } 
+    </script>
+</body>
+</html> 
